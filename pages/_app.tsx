@@ -1,7 +1,11 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { AppLocaleProvider } from "../src/context/locale";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <AppLocaleProvider>
+      <Component {...pageProps} />
+    </AppLocaleProvider>
+  );
 }
-export default MyApp
+export default MyApp;
